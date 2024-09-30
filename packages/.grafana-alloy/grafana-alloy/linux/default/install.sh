@@ -2,9 +2,9 @@
 
 DIR=$PWD
 
-mkdir -p /opt/grafana-alloy/bin/
+mkdir -p /home/mohan/grafana-alloy/bin/
 
-cd /opt/grafana-alloy/bin/
+cd /home/mohan/grafana-alloy/bin/
 
 wget -O alloy-1.4.0.tar.gz https://github.com/grafana/alloy/archive/refs/tags/v1.4.0.tar.gz
 
