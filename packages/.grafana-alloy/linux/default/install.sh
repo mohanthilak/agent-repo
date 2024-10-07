@@ -6,11 +6,15 @@ mkdir -p /opt/grafana-alloy/bin/
 
 cd /opt/grafana-alloy/bin/
 
-wget -O alloy-1.4.0.tar.gz https://github.com/grafana/alloy/archive/refs/tags/v1.4.0.tar.gz
-
-if $DIR/checkmd5 --hash=e7fdc4a314ae8bcc1ef655daeb6c848af47190b7e21ab7b11a04f4a8ff47803709e66c96390b3336492e7b23544edd1fd1048da400d05123d175d4629e2ec7d2 --file=alloy-1.4.0.tar.gz; then
-    tar -xzvf alloy-1.4.0.tar.gz;
+wget -O alloy-1.4.1.zip https://github.com/grafana/alloy/releases/download/v1.4.1/alloy-linux-amd64.zip
+if $DIR/checkmd5 --hash=84dc0915b84ad3755325b527c03e361970a10183a08feb4ba55dd0c10425a7e4628a7d8b9aa708a6522ebbcef60f0af65fe38a4e50d55a0f486f550ae36cafdb --file=alloy-1.4.1.zip; then
+    sudo apt-get install unzip;
+    unzip alloy-1.4.1.zip;
+    mv alloy-linux-amd64 grafana-alloy;
+    chmod +x grafana-alloy;
     mkdir -p /etc/grafana-alloy/;
+    cd /etc/grafana-alloy;
+    touch index.log;
 else
     echo "Downloaded package files do not match checksum";
     exit 1;
