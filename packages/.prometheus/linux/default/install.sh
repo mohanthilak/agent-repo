@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR=#PWD
+DIR=$PWD
 
 mkdir -p /opt/prometheus/bin/
 
