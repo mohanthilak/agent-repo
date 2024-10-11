@@ -17,4 +17,4 @@ else
     exit 1;
 fi
 
-checkmd5 --hash=something --file=myfile.zip
+
